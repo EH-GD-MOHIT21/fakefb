@@ -10,6 +10,8 @@ import smtplib
 import datetime
 from email.message import EmailMessage
 from random import choice
+from django.conf import settings
+
 
 # Create your views here.
 def hlo(request):
@@ -36,14 +38,14 @@ def generate_random_unicode():
 
 def send_mail(to, personalcode):
         # logic to send mail to user
-    sender_mail = "no.reply.verifiyacc@gmail.com"
-    password_sender = "74123586"
+    sender_mail = f"{settings.MAIL_SENDER}"
+    password_sender = f"{settings.PASS_MAIL}"
     message = EmailMessage()
     message['To'] = to
     message['From'] = sender_mail
     message['Subject'] = "Welcome to Fb Clone"
     message.set_content(
-        f"Hello User welcome to FbClone.com Your one time login link is\n http://127.0.0.1:8000/verify/{personalcode} \nvalid for next 15 minutes.")
+        f"Hello User welcome to FbClone.com Your one time login link is\n {settings.SITE_URL}/verify/{personalcode} \nvalid for next 15 minutes.")
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls() 
