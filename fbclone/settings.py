@@ -140,6 +140,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL='/media/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-SITE_URL='https://hks-fbclone.herokuapp.com/'
+SITE_URL='https://hks-fbclone.herokuapp.com'
 PASS_MAIL='74123586'
 MAIL_SENDER='no.reply.verifiyacc@gmail.com'
