@@ -1,7 +1,6 @@
 asgiref==3.4.1
 Django==3.2.5
 gunicorn==20.1.0
-mysqlclient @ file:///C:/Users/BC/Desktop/Fbclone/fbclone/mysqlclient-1.4.6-cp37-cp37m-win32.whl
 psycopg2==2.9.1
 pytz==2021.1
 sqlparse==0.4.1
