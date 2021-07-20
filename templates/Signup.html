@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fb Clone</title>
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Fb Clone</label>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="cm">See Posts</a></li>
+        <li><a href="sgn">Sign up</a></li>
+        <li><a href="lgn">Login</a></li>
+        </ul>
+      </nav>
+      {% for message in messages %}
+    <div id="msbx" class="msgss">
+    <label class="msgs">{{ message }}</label>
+    <i id="msgp" onclick="closemsg()" class="fas fa-times" ></i>
+</div>
+    {% endfor %}
+      <form action="login" method="POST">
+      {% csrf_token %}
+      <div class="lggg2" id="lggg2">
+        <div class="lggg111">
+    <h2>Fb Clone</h2>
+    <p>Fb Clone Connects you to the world and see what's happening out there</p>
+    </div>
+    
+    <div class="logoo1">
+      <input type="text" name="uname" placeholder="Username">
+      <input type="password" name="upss" placeholder="Password">
+      <button id="lgnnn11" type="submit">login</button>
+      <div class="linn1"></div>
+      <button type="button" id="lgnnn12" onclick="chns(id)">Sign up</button>
+    </div>
+    </div>
+  </form>
+  <form action="signup" method="POST">
+    {% csrf_token %}
+      <div class="lggg1" id="lggg1">
+          <div class="lggg112">
+      <h2>Fb Clone</h2>
+      <p>Fb Clone Connects you to the world and see what's happening out there</p>
+      </div> 
+      <div class="logoo">
+        <input class="name" type="text" name="f_name" placeholder="First Name">
+            <input class="name" type="text" name="l_name" placeholder="Last Name">
+            <input class="user_name" type="text" name="u_name" placeholder="Username">
+            <input class="Email" type="email" name="mmail" placeholder="Email">
+            <input class="pass" type="password" name="pass" placeholder="Password">
+            <input class="pass" type="password" name="pass1" placeholder="Password again">
+        <button id="lgnnn" type="submit">Sign up</button>
+        <div class="linn"></div>
+        <button type="button" id="lgnnn1" onclick="chns(id)">login</button>
+
+      </div>
+      </div>
+    </form>
+
+</body>
+<script>
+  function closemsg(){
+    document.getElementById('msbx').style.display="none";
+  }
+  ddss='{{ hkss }}';
+  if(ddss==1){
+    document.getElementById('lggg2').style.display="block";
+    document.getElementById('lggg1').style.display="none";
+  }
+  else{
+    document.getElementById('lggg1').style.display="block";
+    document.getElementById('lggg2').style.display="none";
+  }
+  function chns(dd){
+    if(dd=='lgnnn1'){
+      document.getElementById('lggg1').style.display="none";
+      document.getElementById('lggg2').style.display="";
+    }
+    if(dd=='lgnnn12'){
+      document.getElementById('lggg2').style.display="none";
+      document.getElementById('lggg1').style.display="block";
+    }
+  }
+</script>
+</html>
