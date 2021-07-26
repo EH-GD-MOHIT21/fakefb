@@ -145,8 +145,10 @@ border: none;
 @media(max-width:420px){
     .post{
         width: 95%;
+        margin-top: 3%;
     }
     #share{
         margin-left: 18%;
+        
     }
 }
